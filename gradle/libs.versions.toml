@@ -12,6 +12,8 @@ androidAppConfigPlugin="1.0.0"
 kotlinJavaLibConfigPlugin="1.0.0"
 jetbrainsKotlinJvm = "1.9.24"
 koin = "4.0.2"
+mockk = "1.13.16"
+
 
 [libraries]
 # AndroidX
@@ -35,6 +37,7 @@ koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compos
 
 # Test
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 
 # Gradle plugin classpath
 gradle-plugin-android = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
