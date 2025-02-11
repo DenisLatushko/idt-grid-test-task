@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">IDT-Grid</string>
+    <string name="columns_number_text_label">Columns number</string>
+    <string name="columns_number_error_text_label">Columns number must be 1–6</string>
+    <string name="rows_number_text_label">Rows number</string>
+    <string name="rows_number_error_text_label">Rows number must be 1–1000</string>
+    <string name="apply_button_text">Apply</string>
 </resources>

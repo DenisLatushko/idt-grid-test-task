@@ -11,7 +11,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import net.idt.testtask.grid.feature.gridbuilder.GridBuilder
+import net.idt.testtask.grid.feature.gridbuilder.GridBuilderViewModel
 import net.idt.testtask.grid.ui.theme.IDTGridTheme
+import org.koin.androidx.compose.koinViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,29 +23,15 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             IDTGridTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                val viewModel = koinViewModel<GridBuilderViewModel>()
+                val state = viewModel.state.collectAsStateWithLifecycle()
+
+                GridBuilder(
+                    modifier = Modifier.fillMaxSize(),
+                    state = state.value,
+                    onAction = viewModel::onAction
+                )
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    IDTGridTheme {
-        Greeting("Android")
     }
 }
