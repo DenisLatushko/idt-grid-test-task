@@ -11,6 +11,7 @@ composeBom = "2025.01.01"
 androidAppConfigPlugin="1.0.0"
 kotlinJavaLibConfigPlugin="1.0.0"
 jetbrainsKotlinJvm = "1.9.24"
+koin = "4.0.2"
 
 [libraries]
 # AndroidX
@@ -28,6 +29,10 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
+# DI
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin"}
+koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
+
 # Test
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 
@@ -35,6 +40,9 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 gradle-plugin-android = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 gradle-plugin-android-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 gradle-plugin-compose = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
+
+[bundles]
+koin = ["koin-android", "koin-androidx-compose"]
 
 [plugins]
 build-android-app = { id = "android-app-build-gradle-plugin", version.ref = "androidAppConfigPlugin" }
