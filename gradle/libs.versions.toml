@@ -9,6 +9,8 @@ lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.10.0"
 composeBom = "2025.01.01"
 androidAppConfigPlugin="1.0.0"
+kotlinJavaLibConfigPlugin="1.0.0"
+jetbrainsKotlinJvm = "1.9.24"
 
 [libraries]
 # AndroidX
@@ -36,6 +38,8 @@ gradle-plugin-compose = { module = "org.jetbrains.kotlin:compose-compiler-gradle
 
 [plugins]
 build-android-app = { id = "android-app-build-gradle-plugin", version.ref = "androidAppConfigPlugin" }
+build-kotlinJava-lib = { id = "kotlin-java-lib-build-gradle-plugin", version.ref = "kotlinJavaLibConfigPlugin" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
