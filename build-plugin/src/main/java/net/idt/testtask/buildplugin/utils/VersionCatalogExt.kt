@@ -17,8 +17,11 @@ internal val VersionCatalog.kotlinAndroidPlugin: PluginDependency
 internal val VersionCatalog.kotlinCompose: PluginDependency
     get() = findPlugin("kotlin.compose").get().get()
 
-internal val VersionCatalog.javaLibraryPluginId: String
+internal val javaLibraryPluginId: String
     get() = "java-library"
 
 internal val VersionCatalog.kotlinJvm: PluginDependency
     get() = findPlugin("jetbrains.kotlin.jvm").get().get()
+
+internal val VersionCatalog.androidLibraryPlugin: PluginDependency
+    get() = findPlugin("android.library").get().get()

@@ -19,6 +19,13 @@ gradlePlugin {
         implementationClass = "net.idt.testtask.buildplugin.AndroidAppGradlePlugin"
     }
 
+    plugins.register("android-lib-build-gradle-plugin") {
+        id = "android-lib-build-gradle-plugin"
+        version = "1.0.0"
+        group = "net.idt.testtask.plugin"
+        implementationClass = "net.idt.testtask.buildplugin.AndroidLibGradlePlugin"
+    }
+
     plugins.register("kotlin-java-lib-build-gradle-plugin") {
         id = "kotlin-java-lib-build-gradle-plugin"
         version = "1.0.0"

@@ -18,7 +18,7 @@ class KotlinJavaGradlePlugin: Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             pluginManager.apply(
-                versionCatalog.javaLibraryPluginId,
+                javaLibraryPluginId,
                 versionCatalog.kotlinJvm.pluginId
             )
 
