@@ -5,7 +5,6 @@ import net.idt.testtask.buildplugin.config.androidLibConfig
 import net.idt.testtask.buildplugin.utils.androidLibraryPlugin
 import net.idt.testtask.buildplugin.utils.apply
 import net.idt.testtask.buildplugin.utils.kotlinAndroidPlugin
-import net.idt.testtask.buildplugin.utils.kotlinCompose
 import net.idt.testtask.buildplugin.utils.versionCatalog
 import org.gradle.api.Plugin
 import org.gradle.api.Project
