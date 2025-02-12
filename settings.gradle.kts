@@ -1,6 +1,7 @@
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
+    includeBuild("build-plugin")
     repositories {
         google {
             content {
@@ -23,3 +24,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "IDT-Grid"
 include(":app")
+include(":domain")
+include(":data")
