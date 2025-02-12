@@ -15,6 +15,9 @@ private const val MAX_ITEMS_NUMBER_EVEN = 50
 private const val MAX_ITEMS_NUMBER_LOW_NUMBER = MAX_PAGE_SIZE - 2
 private const val TEST_RANDOM_STRING = "1234567890"
 
+/**
+ * Tests for [TextDataSourceImpl]
+ */
 class TextDataSourceImplTest {
 
     private val textGeneratorMock = mockk<TextGenerator> {

@@ -12,8 +12,11 @@ import org.junit.experimental.runners.Enclosed
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
+/**
+ * Tests for [GridBuilderViewModel]
+ */
 @RunWith(Enclosed::class)
-class GridBuilderViewModelTest {
+internal class GridBuilderViewModelTest {
 
     class GridBuilderViewModelTest {
         private val checkSettingsUseCaseMock = mockk<CheckGridSettingsUseCase>(relaxed = true)

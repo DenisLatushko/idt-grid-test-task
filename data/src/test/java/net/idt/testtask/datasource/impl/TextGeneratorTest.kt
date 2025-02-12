@@ -10,6 +10,9 @@ import java.util.UUID
 
 private const val TEST_TEXT = "1234567890"
 
+/**
+ * Tests for [TextGenerator]
+ */
 class TextGeneratorTest {
 
     @Before

@@ -11,6 +11,9 @@ import net.idt.testtask.domain.model.TextDomainModel
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
+/**
+ * Tests for [TextDataRepoImpl]
+ */
 class TextDataRepoImplTest {
 
     private val textDataMock by lazy {

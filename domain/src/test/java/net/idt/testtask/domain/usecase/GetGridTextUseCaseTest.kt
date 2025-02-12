@@ -14,6 +14,9 @@ private const val TEST_PAGE_NUMBER = 1
 private const val TEST_ROW_NUMBER = 5
 private const val TEST_COL_NUMBER = 6
 
+/**
+ * Tests for [GetGridTextUseCase]
+ */
 class GetGridTextUseCaseTest {
 
     private val textDataRepoMock = mockk<TextDataRepo>(relaxed = true)
