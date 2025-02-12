@@ -18,7 +18,7 @@ class GetGridTextUseCase(private val textDataRepo: TextDataRepo) {
 /**
  * Parameters set for [GetGridTextUseCase]
  */
-class GetGridTextParams(
+data class GetGridTextParams(
     val dataPage: Int,
     val colNumber: Int,
     val rowNumber: Int
