@@ -20,7 +20,6 @@ import org.junit.Test
 private const val COL_NUMBER_TEXT = "6"
 private const val ROW_NUMBER_TEXT = "1000"
 
-
 class GridBuilderKtTest {
     @get:Rule val composeTestRule = createAndroidComposeRule<ComponentActivity>()
 
