@@ -17,7 +17,8 @@ The project contains 3 Gradle modules which present different architecture layer
 - App - Presentation Layer
 - Domain - Domain Layer
 - Data - Data layer
-All Gradle modules are tuned by convention plugins places to "build-plugin" directory
+  
+All Gradle modules are tuned by convention plugins places in build-plugin
 
 ### 1 - App - Presentation Layer
 Presentation Layer implemented by using:
