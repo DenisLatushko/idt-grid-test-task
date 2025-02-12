@@ -49,6 +49,8 @@ koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin"
 # Test
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
+mockk-agent = { group = "io.mockk", name = "mockk-agent", version.ref = "mockk" }
 
 # Gradle plugin classpath
 gradle-plugin-android = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
