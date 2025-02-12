@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <supports-screens
+        android:largeScreens="true"
+        android:xlargeScreens="true"
+        android:normalScreens="false"
+        android:smallScreens="false"
+        android:anyDensity="true"/>
+
     <application
         android:name=".IdtGridApplication"
         android:allowBackup="true"
