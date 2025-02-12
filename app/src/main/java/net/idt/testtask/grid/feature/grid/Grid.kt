@@ -23,12 +23,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Black
 import androidx.compose.ui.graphics.Color.Companion.Green
 import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
@@ -87,15 +91,9 @@ private fun GridItem(
             )
     ) {
         if (state.isEditable) {
-            var text by remember { mutableStateOf(state.title) }
-            TextField(
-                value = text,
-                onValueChange = { text = it },
-                modifier = Modifier.fillMaxSize(),
-                keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
-                keyboardActions = KeyboardActions(
-                    onDone = { onAction(GridAction.OnTitleChanged(state.id, text)) }
-                )
+            EditCell(
+                state = state,
+                onAction = onAction
             )
         } else {
             Text(
@@ -105,5 +103,36 @@ private fun GridItem(
                 color = Black
             )
         }
+    }
+}
+
+@Composable
+private fun EditCell(
+    state: GridItemState,
+    onAction: (GridAction) -> Unit
+) {
+    val focusRequester = remember { FocusRequester() }
+    var text by remember {
+        mutableStateOf(
+            TextFieldValue(
+                text = state.title,
+                selection = TextRange(state.title.length)
+            )
+        )
+    }
+
+    TextField(
+        modifier = Modifier.fillMaxSize()
+            .focusRequester(focusRequester),
+        value = text,
+        onValueChange = { text = it },
+        keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
+        keyboardActions = KeyboardActions(
+            onDone = { onAction(GridAction.OnTitleChanged(state.id, text.text)) }
+        )
+    )
+
+    LaunchedEffect(Unit) {
+        focusRequester.requestFocus()
     }
 }

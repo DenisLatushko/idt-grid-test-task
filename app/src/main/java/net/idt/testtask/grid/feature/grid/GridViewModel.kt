@@ -29,10 +29,6 @@ internal class GridViewModel(
     private val _state = MutableStateFlow(GridState(columnNumber = initParams.colNumber))
     override val state: StateFlow<GridState> = _state.asStateFlow()
 
-    init {
-        onAction(GridAction.LoadMore)
-    }
-
     override fun onAction(action: GridAction) {
         when (action) {
             is GridAction.LoadMore -> loadMore()

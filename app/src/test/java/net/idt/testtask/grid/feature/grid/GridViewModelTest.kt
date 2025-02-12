@@ -70,19 +70,6 @@ class GridViewModelTest {
     }
 
     @Test
-    fun `given view model when init then get text use case invoked`() = runTest {
-        coVerify(exactly = 1) {
-            getGridTextUseCaseMock.invoke(
-                params = GetGridTextParams(
-                    dataPage = 1,
-                    colNumber = TEST_COL_NUMBER,
-                    rowNumber = TEST_ROW_NUMBER
-                )
-            )
-        }
-    }
-
-    @Test
     fun `given view model when init then first state no items but have cols number`() {
         val state = viewModel.state.value
 
@@ -99,7 +86,7 @@ class GridViewModelTest {
         coVerify(exactly = 1) {
             getGridTextUseCaseMock .invoke(
                 params = GetGridTextParams(
-                    dataPage = 2,
+                    dataPage = 1,
                     colNumber = TEST_COL_NUMBER,
                     rowNumber = TEST_ROW_NUMBER
                 )

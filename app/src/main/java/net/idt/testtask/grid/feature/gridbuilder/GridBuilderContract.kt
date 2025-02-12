@@ -11,3 +11,14 @@ internal sealed interface GridBuilderAction {
         val rowNumberText: String
     ): GridBuilderAction
 }
+
+internal sealed interface GridBuilderSideEffect {
+
+    sealed interface NavigationSideEffect: GridBuilderSideEffect {
+
+        data class GridReady(
+            val colNumber: Int,
+            val rowNumber: Int
+        ): NavigationSideEffect
+    }
+}
