@@ -40,16 +40,13 @@ internal fun Grid(
     onAction: (GridAction) -> Unit
 ) {
     val scrollState = rememberLazyGridState()
-
-    val fetchNextPage: Boolean by remember {
-        derivedStateOf {
+    val fetchNextPage: Boolean by derivedStateOf {
             val lastDisplayedIndex = scrollState.layoutInfo.visibleItemsInfo
                 .lastOrNull()
                 ?.index
                 ?: return@derivedStateOf false
             return@derivedStateOf lastDisplayedIndex >= state.items.size - 10
         }
-    }
 
     LaunchedEffect(key1 = fetchNextPage) {
         if (fetchNextPage) onAction(GridAction.LoadMore)

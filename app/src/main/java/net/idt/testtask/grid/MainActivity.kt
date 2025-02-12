@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             IDTGridTheme {
                 val viewModel = koinViewModel<GridViewModel>(
-                    parameters = { parametersOf(GridViewModelInitParams(3, 10)) }
+                    parameters = { parametersOf(GridViewModelInitParams(6, 1000)) }
                 )
                 val state by viewModel.state.collectAsStateWithLifecycle()
                 Grid(
