@@ -38,7 +38,7 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-internal fun Grid(
+internal fun GridScreen(
     modifier: Modifier = Modifier,
     state: GridState,
     onAction: (GridAction) -> Unit

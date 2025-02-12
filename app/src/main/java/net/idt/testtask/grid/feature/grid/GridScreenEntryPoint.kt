@@ -6,7 +6,6 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import net.idt.testtask.grid.ui.navigation.NavRoute
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 
@@ -24,7 +23,7 @@ internal fun GridScreenEntryPoint(
         viewModel.onAction(GridAction.LoadMore)
     }
 
-    Grid(
+    GridScreen(
         modifier = Modifier.fillMaxSize(),
         state = state,
         onAction = viewModel::onAction
