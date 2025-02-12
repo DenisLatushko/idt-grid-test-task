@@ -6,7 +6,7 @@ internal data class GridBuilderState(
 )
 
 internal sealed interface GridBuilderAction {
-    class ApplySettings(
+    data class ApplySettings(
         val colNumberText: String,
         val rowNumberText: String
     ): GridBuilderAction

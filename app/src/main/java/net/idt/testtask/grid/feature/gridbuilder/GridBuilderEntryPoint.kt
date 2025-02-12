@@ -10,7 +10,7 @@ import net.idt.testtask.grid.utils.architecture.CollectAsSideEffect
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
-internal fun GridBuilderEntryPoint(onNavigate: (NavigationSideEffect) -> Unit) {
+internal fun GridBuilderEntryPoint(onNavigate: (NavigationSideEffect) -> Unit = {}) {
     val viewModel = koinViewModel<GridBuilderViewModel>()
     val state by viewModel.state.collectAsStateWithLifecycle()
 
