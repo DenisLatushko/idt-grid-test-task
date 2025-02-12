@@ -7,6 +7,7 @@ import net.idt.testtask.grid.feature.grid.GridViewModel
 import net.idt.testtask.grid.feature.gridbuilder.GridBuilderViewModel
 import org.koin.core.module.Module
 import org.koin.core.module.dsl.viewModel
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 internal fun getPresentationModule(): Module = module {
@@ -16,9 +17,13 @@ internal fun getPresentationModule(): Module = module {
         GridViewModel(
             initParams = parameters.get(),
             getGridTextUseCase = get(),
-            gridItemStateMapper = get()
+            gridItemStateMapper = get(named("GridItemStateMapper"))
         )
     }
 
-    factory<(TextDomainModel) -> GridItemState> { GridItemStateMapper() }
+    factory<(TextDomainModel) -> GridItemState>(
+        named("GridItemStateMapper")
+    ) {
+        GridItemStateMapper()
+    }
 }

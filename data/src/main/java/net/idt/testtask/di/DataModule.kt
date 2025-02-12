@@ -10,17 +10,20 @@ import net.idt.testtask.datasource.impl.TextGenerator
 import net.idt.testtask.domain.model.TextDomainModel
 import net.idt.testtask.domain.repo.TextDataRepo
 import org.koin.core.module.Module
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 fun getDataModule(): Module = module {
     factory<TextDataRepo> {
         TextDataRepoImpl(
             textDataSource = get(),
-            textDomainModelMapper = get()
+            textDomainModelMapper = get(named("TextDomainModelMapper"))
         )
     }
 
-    factory<(TextData) -> TextDomainModel> { TextDomainModelMapper() }
+    factory<(TextData) -> TextDomainModel>(
+        named("TextDomainModelMapper")
+    ) { TextDomainModelMapper() }
 
     factory { TextGenerator() }
 
