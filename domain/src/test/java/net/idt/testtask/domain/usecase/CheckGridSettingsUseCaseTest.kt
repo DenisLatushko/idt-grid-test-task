@@ -1,7 +1,6 @@
 package net.idt.testtask.domain.usecase
 
 import net.idt.testtask.domain.model.GridSettingsCheckUpDomainModel
-import org.junit.Assert
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
