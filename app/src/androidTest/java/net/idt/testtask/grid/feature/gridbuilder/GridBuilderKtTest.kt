@@ -123,7 +123,7 @@ class GridBuilderKtTest {
 
     private fun startScreen(hasErrors: Boolean) {
         composeTestRule.setContentWithTheme {
-            GridBuilder(
+            GridBuilderScreen(
                 modifier = Modifier.fillMaxSize(),
                 state = GridBuilderState(
                     hasColNumberError = hasErrors,

@@ -31,7 +31,7 @@ import net.idt.testtask.grid.ui.component.TextButton
 import net.idt.testtask.grid.ui.theme.IDTGridTheme
 
 @Composable
-internal fun GridBuilder(
+internal fun GridBuilderScreen(
     modifier: Modifier = Modifier,
     state: GridBuilderState,
     onAction: (GridBuilderAction) -> Unit = {}
@@ -120,7 +120,7 @@ private fun GridBuilderPreview(
     @PreviewParameter(GridBuilderPreviewProvider::class) state: GridBuilderState
 ) {
     IDTGridTheme {
-        GridBuilder (
+        GridBuilderScreen (
             modifier = Modifier.fillMaxSize(),
             state = state
         )

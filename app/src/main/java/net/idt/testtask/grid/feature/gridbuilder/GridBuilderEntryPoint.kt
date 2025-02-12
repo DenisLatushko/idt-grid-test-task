@@ -20,7 +20,7 @@ internal fun GridBuilderEntryPoint(onNavigate: (NavigationSideEffect) -> Unit = 
         }
     }
 
-    GridBuilder(
+    GridBuilderScreen(
         modifier = Modifier.fillMaxSize(),
         state = state,
         onAction = viewModel::onAction
