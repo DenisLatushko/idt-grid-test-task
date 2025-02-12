@@ -2,6 +2,7 @@ package net.idt.testtask.grid.feature.grid
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -18,6 +19,10 @@ internal fun GridScreenEntryPoint(
         parametersOf(GridViewModelInitParams(colNumber = colNumber, rowNumber = rowNumber))
     })
     val state by viewModel.state.collectAsStateWithLifecycle()
+
+    LaunchedEffect(Unit) {
+        viewModel.onAction(GridAction.LoadMore)
+    }
 
     Grid(
         modifier = Modifier.fillMaxSize(),
