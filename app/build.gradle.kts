@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.build.android.app)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -31,6 +32,8 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.compose.navigation)
+
+    implementation(libs.kotlinx.serialization.json)
 
     implementation(libs.bundles.koin)
 
